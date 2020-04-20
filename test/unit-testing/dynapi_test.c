@@ -45958,6 +45958,14 @@ test_sizes (void)
                "dwg_dynapi_fields_size (\"MLINE_vertex\"): %d\n", size1, size2);
       error++;
     }
+  size1 = sizeof (struct _dwg_R2004_Header);
+  size2 = dwg_dynapi_fields_size ("R2004_Header");
+  if (size1 != size2)
+    {
+      fprintf (stderr, "sizeof(struct _dwg_R2004_Header): %d != "
+               "dwg_dynapi_fields_size (\"R2004_Header\"): %d\n", size1, size2);
+      error++;
+    }
   size1 = sizeof (struct _dwg_SPLINE_control_point);
   size2 = dwg_dynapi_fields_size ("SPLINE_control_point");
   if (size1 != size2)
